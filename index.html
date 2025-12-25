@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,33 +16,6 @@
         }
 
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --bg-card: #ffffff;
-            --bg-card-hover: #fefefe;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-tertiary: #64748b;
-            --accent: #5865F2;
-            --accent-light: #7289da;
-            --accent-dark: #4752C4;
-            --accent-gradient: linear-gradient(135deg, #5865F2 0%, #7c3aed 50%, #d946ef 100%);
-            --success: #10b981;
-            --warning: #f59e0b;
-            --error: #ef4444;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --border: #e2e8f0;
-            --border-light: #f1f5f9;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.18);
-        }
-
-        body.dark-mode {
             --bg-primary: #0f172a;
             --bg-secondary: #1e293b;
             --bg-tertiary: #334155;
@@ -66,6 +40,33 @@
             --border-light: #475569;
             --glass-bg: rgba(30, 41, 59, 0.7);
             --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body.light-mode {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #fefefe;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --accent: #5865F2;
+            --accent-light: #7289da;
+            --accent-dark: #4752C4;
+            --accent-gradient: linear-gradient(135deg, #5865F2 0%, #7c3aed 50%, #d946ef 100%);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.18);
         }
 
         html {
@@ -1244,10 +1245,10 @@
     </div>
 
     <div class="theme-toggle">
-        <button class="theme-btn active" id="lightBtn" aria-label="Modo Claro">
+        <button class="theme-btn" id="lightBtn" aria-label="Modo Claro">
             <span>☀️</span>
         </button>
-        <button class="theme-btn" id="darkBtn" aria-label="Modo Escuro">
+        <button class="theme-btn active" id="darkBtn" aria-label="Modo Escuro">
             <span>🌙</span>
         </button>
     </div>
@@ -1424,10 +1425,18 @@
                     <h4>🎉 Rua 45</h4>
                     <p>A comunidade Discord mais animada de Portugal. Onde amizades são feitas e memórias são criadas.</p>
                     <div class="social-links">
-                        <a href="https://discord.gg/XczrzzEME3" class="social-link" aria-label="Discord" target="_blank" rel="noopener noreferrer">💬</a>
-                        <a href="https://x.com/joaoapcarvalho?t=EIzZy_oIavDsy0AWwERRWw&s=09" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
-                        <a href="https://www.instagram.com/joni_zen2?igsh=dnh0amhqNDEwbHMw" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">📷</a>
-                        <a href="https://youtube.com/@joni_zen1?si=HuNb2Bd6C0--pe64" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">🎥</a>
+                        <a href="https://discord.gg/XczrzzEME3" class="social-link" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://x.com/joaoapcarvalho?t=EIzZy_oIavDsy0AWwERRWw&s=09" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/joni_zen2?igsh=dnh0amhqNDEwbHMw" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@joni_zen1?si=HuNb2Bd6C0--pe64" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -1475,22 +1484,15 @@
         const darkBtn = document.getElementById('darkBtn');
         const body = document.body;
 
-        const savedTheme = sessionStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            lightBtn.classList.remove('active');
-            darkBtn.classList.add('active');
-        }
-
         lightBtn.addEventListener('click', () => {
-            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
             lightBtn.classList.add('active');
             darkBtn.classList.remove('active');
             sessionStorage.setItem('theme', 'light');
         });
 
         darkBtn.addEventListener('click', () => {
-            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
             lightBtn.classList.remove('active');
             darkBtn.classList.add('active');
             sessionStorage.setItem('theme', 'dark');
@@ -1630,7 +1632,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
