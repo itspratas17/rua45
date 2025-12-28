@@ -530,7 +530,6 @@
 
         .about-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
             max-width: 1200px;
@@ -590,154 +589,6 @@
         .feature-text {
             font-weight: 600;
             color: var(--text-primary);
-        }
-
-        .about-visual {
-            position: relative;
-            animation: fadeInRight 1s ease;
-        }
-
-        .about-image {
-            width: 100%;
-            height: 500px;
-            background: var(--accent-gradient);
-            border-radius: 30px;
-            box-shadow: var(--shadow-2xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .floating-emoji {
-            position: absolute;
-            font-size: 3em;
-            animation: floatEmoji 3s ease-in-out infinite;
-        }
-
-        .floating-emoji:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-emoji:nth-child(2) {
-            top: 20%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        .floating-emoji:nth-child(3) {
-            bottom: 15%;
-            left: 15%;
-            animation-delay: 2s;
-        }
-
-        @keyframes floatEmoji {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-        }
-
-        .rules-section {
-            background: var(--bg-secondary);
-        }
-
-        .rules-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .rules-list {
-            display: grid;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .rule-item {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 25px;
-            padding: 35px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            border-left: 5px solid var(--accent);
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .rule-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-gradient);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .rule-item:hover::before {
-            opacity: 0.05;
-        }
-
-        .rule-item:hover {
-            transform: translateX(15px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .rule-number {
-            font-size: 3em;
-            font-weight: 900;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 1;
-        }
-
-        .rule-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .rule-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-
-        .rule-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1.05em;
         }
 
         .benefits-grid {
@@ -848,6 +699,12 @@
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .cta-content {
@@ -1373,10 +1230,6 @@
                 gap: 40px;
             }
 
-            .about-image {
-                height: 400px;
-            }
-
             .modal {
                 padding: 40px 30px;
             }
@@ -1430,12 +1283,6 @@
                 gap: 20px;
             }
 
-            .rule-item {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding: 25px;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1452,11 +1299,6 @@
 
             .cta-content p {
                 font-size: 1.2em;
-            }
-
-            .about-image {
-                height: 300px;
-                font-size: 5em;
             }
 
             .modal {
@@ -1579,51 +1421,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="about-visual scroll-animate">
-                    <div class="about-image">
-                        <span>🕊️</span>
-                        <div class="floating-emoji">🪽</div>
-                        <div class="floating-emoji">😇</div>
-                        <div class="floating-emoji">🍃</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section rules-section">
-        <div class="container">
-            <div class="section-header scroll-animate">
-                <span class="section-badge">Regras</span>
-                <h2 class="section-title">Regras Simples</h2>
-                <p class="section-subtitle">Apenas três regras para manter tudo incrível</p>
-            </div>
-
-            <div class="rules-container">
-                <ul class="rules-list">
-                    <li class="rule-item scroll-animate">
-                        <div class="rule-number">01</div>
-                        <div class="rule-content">
-                            <h3 class="rule-title">✅ Respeito Sempre</h3>
-                            <p class="rule-description">Trata todos com gentileza e respeito. Diferenças são bem-vindas, mas a educação é obrigatória.</p>
-                        </div>
-                    </li>
-                    <li class="rule-item scroll-animate">
-                        <div class="rule-number">02</div>
-                        <div class="rule-content">
-                            <h3 class="rule-title">🚫 Sem Spam</h3>
-                            <p class="rule-description">Mantém as conversas limpas e organizadas. Spam e mensagens repetitivas não são permitidos.</p>
-                        </div>
-                    </li>
-                    <li class="rule-item scroll-animate">
-                        <div class="rule-number">03</div>
-                        <div class="rule-content">
-                            <h3 class="rule-title">⚡ Só Energia Boa</h3>
-                            <p class="rule-description">Traz positividade e boas vibes. Estamos aqui para nos divertir e criar um ambiente acolhedor.</p>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </section>
@@ -1726,7 +1523,7 @@
                 <div class="footer-section">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="return false;">Termos de Uso</a></li>
+                        <li><a href="#" onclick="openTermsModal(); return false;">Termos de Uso</a></li>
                         <li><a href="#" onclick="return false;">Política de Privacidade</a></li>
                         <li><a href="#" onclick="return false;">Diretrizes</a></li>
                     </ul>
@@ -1780,25 +1577,25 @@
                 <p class="staff-role">Superior II</p>
                 <p class="staff-description">Deixa a comunidade mais ativa e avisa quando há algo de errado.</p>
             </div>
-                <div class="staff-card">
+            <div class="staff-card">
                 <div class="staff-emoji">🛠️</div>
                 <h3 class="staff-name">Maria Pereira</h3>
                 <p class="staff-role">Superior II</p>
                 <p class="staff-description">Encarregada de Dar Bumps.</p>
             </div>
-                <div class="staff-card">
+            <div class="staff-card">
                 <div class="staff-emoji">🛠️</div>
                 <h3 class="staff-name">Avid.Sage</h3>
                 <p class="staff-role">Superior II</p>
                 <p class="staff-description">Bastante ativo e pronto para receber pessoas novas.</p>
             </div>
-                <div class="staff-card">
+            <div class="staff-card">
                 <div class="staff-emoji">🛠️</div>
                 <h3 class="staff-name">MELÂNCIA</h3>
                 <p class="staff-role">Superior II</p>
                 <p class="staff-description">Encarregado de Parcerias caso queiram fazer</p>
             </div>
-                <div class="staff-card">
+            <div class="staff-card">
                 <div class="staff-emoji">🛠️</div>
                 <h3 class="staff-name">AFCP_1</h3>
                 <p class="staff-role">Superior II</p>
@@ -1820,33 +1617,31 @@
             </h2>
             <p class="modal-subtitle">Servidores que temos Parceria.</p>
         </div>
-<div class="partners-grid">
-    <div class="partner-card">
-        <div class="partner-logo">
-            <span style="font-size: 50px;">🧘‍♂️</span> <!-- Emoji para Joni ZEN -->
-        </div>
-        <h3 class="partner-name">! Joni ZEN ＳＥＲＶＥＲ</h3>
-        <p class="partner-description">É um espaço de diversão, memes, jogos e partilhas, onde a criatividade e a boa energia nunca acabam.</p>
-        <a href="https://discord.gg/6wbqjf4Vpr" target="_blank" class="partner-link">Entrar Agora!</a>
-    </div>
-    <div class="partner-card">
-        <div class="partner-logo">
-            <span style="font-size: 50px;">🎮</span> <!-- Emoji para Comunidade de Bertão -->
-        </div>
-        <h3 class="partner-name">Comunidade de Bertão</h3>
-        <p class="partner-description">Servidor de streamer para conhecer amigos e interagir com a comunidade.</p>
-        <a href="https://discord.gg/yH3qr2VS7W" target="_blank" class="partner-link">Entrar Agora!</a>
-    </div>
-    <div class="partner-card">
-        <div class="partner-logo">
-            <span style="font-size: 50px;">🛒</span> <!-- Emoji para Ruben Shop -->
-        </div>
-        <h3 class="partner-name">Ruben Shop #150</h3>
-        <p class="partner-description">"✈ Join the Best Account Shop on Discord."</p>
-        <a href="https://discord.gg/gJgsk886WG" target="_blank" class="partner-link">Entrar Agora!</a>
-    </div>
-</div>
-</div>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <span style="font-size: 50px;">🧘‍♂️</span>
+                </div>
+                <h3 class="partner-name">! Joni ZEN ＳＥＲＶＥＲ</h3>
+                <p class="partner-description">É um espaço de diversão, memes, jogos e partilhas, onde a criatividade e a boa energia nunca acabam.</p>
+                <a href="https://discord.gg/6wbqjf4Vpr" target="_blank" class="partner-link">Entrar Agora!</a>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <span style="font-size: 50px;">🎮</span>
+                </div>
+                <h3 class="partner-name">Comunidade de Bertão</h3>
+                <p class="partner-description">Servidor de streamer para conhecer amigos e interagir com a comunidade.</p>
+                <a href="https://discord.gg/yH3qr2VS7W" target="_blank" class="partner-link">Entrar Agora!</a>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo">
+                    <span style="font-size: 50px;">🛒</span>
+                </div>
+                <h3 class="partner-name">Ruben Shop #150</h3>
+                <p class="partner-description">"✈ Join the Best Account Shop on Discord."</p>
+                <a href="https://discord.gg/gJgsk886WG" target="_blank" class="partner-link">Entrar Agora!</a>
+            </div>
         </div>
     </div>
 
@@ -1863,48 +1658,107 @@
             </h2>
             <p class="modal-subtitle">Leia atentamente as regras para uma convivência harmoniosa na Rua 45</p>
         </div>
-<div class="rules-grid">
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #1</div>
-        <h3 class="rule-modal-title">✅ Respeito mútuo</h3>
-        <p class="rule-modal-description">Todos os membros devem ser tratados com educação e cortesia, evitando insultos, discriminação ou ataques pessoais.</p>
+        <div class="rules-grid">
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #1</div>
+                <h3 class="rule-modal-title">✅ Respeito mútuo</h3>
+                <p class="rule-modal-description">Todos os membros devem ser tratados com educação e cortesia, evitando insultos, discriminação ou ataques pessoais.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #2</div>
+                <h3 class="rule-modal-title">🚫 Proibição de spam e flood</h3>
+                <p class="rule-modal-description">É proibido enviar mensagens repetidas, links ou emojis de forma excessiva que perturbem a comunicação do servidor.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #3</div>
+                <h3 class="rule-modal-title">🔞 Conteúdo ilegal ou impróprio</h3>
+                <p class="rule-modal-description">Não é permitido partilhar links maliciosos, conteúdos de pirataria ou qualquer material ilegal ou suspeito.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #4</div>
+                <h3 class="rule-modal-title">💬 Utilização adequada dos canais</h3>
+                <p class="rule-modal-description">Cada canal deve ser utilizado para o propósito definido, respeitando os temas estabelecidos (ex.: música, memes, regras).</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #5</div>
+                <h3 class="rule-modal-title">🚫 Publicidade não autorizada</h3>
+                <p class="rule-modal-description">É proibido promover outros servidores, produtos ou serviços sem autorização prévia da equipa administrativa.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #6</div>
+                <h3 class="rule-modal-title">⚠️ Privacidade e segurança</h3>
+                <p class="rule-modal-description">Não deve ser partilhada qualquer informação pessoal de outros membros sem consentimento explícito.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Regra #7</div>
+                <h3 class="rule-modal-title">🎉 Cumprimento das instruções da equipa</h3>
+                <p class="rule-modal-description">As orientações fornecidas por moderadores e administradores devem ser respeitadas, sendo a sua decisão final em quaisquer conflitos.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">Importante</div>
+                <h3 class="rule-modal-title">⚖️ Consequências</h3>
+                <p class="rule-modal-description">O incumprimento destas regras poderá resultar em advertências, mute temporário, expulsão ou banimento permanente, de acordo com a gravidade da infração.</p>
+            </div>
+        </div>
     </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #2</div>
-        <h3 class="rule-modal-title">🚫 Proibição de spam e flood</h3>
-        <p class="rule-modal-description">É proibido enviar mensagens repetidas, links ou emojis de forma excessiva que perturbem a comunicação do servidor.</p>
+
+    <!-- Terms Modal -->
+    <div class="modal-overlay" id="termsModalOverlay" onclick="closeTermsModal()"></div>
+    <div class="modal" id="termsModal">
+        <button class="modal-close" onclick="closeTermsModal()" aria-label="Fechar">
+            <span>✕</span>
+        </button>
+        <div class="modal-header">
+            <h2 class="modal-title">
+                <span class="modal-title-icon">📋</span>
+                Termos de Uso
+            </h2>
+            <p class="modal-subtitle">Leia os termos e condições de uso da comunidade Rua 45</p>
+        </div>
+        <div class="rules-grid">
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">1. Aceitação dos Termos</div>
+                <h3 class="rule-modal-title">📝 Concordância</h3>
+                <p class="rule-modal-description">Ao entrar e participar no servidor Discord Rua 45, você concorda automaticamente com todos os termos e condições aqui estabelecidos.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">2. Uso do Serviço</div>
+                <h3 class="rule-modal-title">🎯 Finalidade</h3>
+                <p class="rule-modal-description">O servidor Rua 45 destina-se exclusivamente a entretenimento, socialização e interação saudável entre membros. Qualquer uso indevido pode resultar em banimento.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">3. Conteúdo do Usuário</div>
+                <h3 class="rule-modal-title">💬 Responsabilidade</h3>
+                <p class="rule-modal-description">Você é totalmente responsável por todo o conteúdo que compartilha no servidor, incluindo mensagens, imagens, links e qualquer outro material.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">4. Privacidade</div>
+                <h3 class="rule-modal-title">🔒 Proteção de Dados</h3>
+                <p class="rule-modal-description">Respeitamos sua privacidade. Não coletamos ou compartilhamos informações pessoais sem consentimento. Utilize o Discord com responsabilidade.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">5. Modificações</div>
+                <h3 class="rule-modal-title">🔄 Atualizações</h3>
+                <p class="rule-modal-description">A administração da Rua 45 reserva-se o direito de modificar estes termos a qualquer momento. As alterações serão comunicadas através dos canais oficiais.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">6. Direitos da Administração</div>
+                <h3 class="rule-modal-title">⚖️ Gestão</h3>
+                <p class="rule-modal-description">A equipe administrativa tem o direito de remover, banir ou tomar quaisquer medidas necessárias para manter a ordem e segurança do servidor.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">7. Isenção de Responsabilidade</div>
+                <h3 class="rule-modal-title">⚠️ Limitações</h3>
+                <p class="rule-modal-description">A Rua 45 não se responsabiliza por interações entre membros fora do servidor ou por danos decorrentes do uso da plataforma Discord.</p>
+            </div>
+            <div class="rule-modal-item">
+                <div class="rule-modal-number">8. Contato</div>
+                <h3 class="rule-modal-title">📧 Suporte</h3>
+                <p class="rule-modal-description">Para questões relacionadas aos termos de uso, entre em contato com a equipe de administração através dos canais oficiais de suporte do servidor.</p>
+            </div>
+        </div>
     </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #3</div>
-        <h3 class="rule-modal-title">🔞 Conteúdo ilegal ou impróprio</h3>
-        <p class="rule-modal-description">Não é permitido partilhar links maliciosos, conteúdos de pirataria ou qualquer material ilegal ou suspeito.</p>
-    </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #4</div>
-        <h3 class="rule-modal-title">💬 Utilização adequada dos canais</h3>
-        <p class="rule-modal-description">Cada canal deve ser utilizado para o propósito definido, respeitando os temas estabelecidos (ex.: música, memes, regras).</p>
-    </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #5</div>
-        <h3 class="rule-modal-title">🚫 Publicidade não autorizada</h3>
-        <p class="rule-modal-description">É proibido promover outros servidores, produtos ou serviços sem autorização prévia da equipa administrativa.</p>
-    </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #6</div>
-        <h3 class="rule-modal-title">⚠️ Privacidade e segurança</h3>
-        <p class="rule-modal-description">Não deve ser partilhada qualquer informação pessoal de outros membros sem consentimento explícito.</p>
-    </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Regra #7</div>
-        <h3 class="rule-modal-title">🎉 Cumprimento das instruções da equipa</h3>
-        <p class="rule-modal-description">As orientações fornecidas por moderadores e administradores devem ser respeitadas, sendo a sua decisão final em quaisquer conflitos.</p>
-    </div>
-    <div class="rule-modal-item">
-        <div class="rule-modal-number">Importante</div>
-        <h3 class="rule-modal-title">⚖️ Consequências</h3>
-        <p class="rule-modal-description">O incumprimento destas regras poderá resultar em advertências, mute temporário, expulsão ou banimento permanente, de acordo com a gravidade da infração.</p>
-    </div>
-</div>
+
     <script>
         // Theme toggle
         const lightBtn = document.getElementById('lightBtn');
@@ -1972,9 +1826,9 @@
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
+                    e.preventDefault();
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -2050,22 +1904,6 @@
             });
         });
 
-        // Konami code easter egg
-        let konamiCode = [];
-        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-
-        document.addEventListener('keydown', (e) => {
-            konamiCode.push(e.key);
-            konamiCode = konamiCode.slice(-10);
-            
-            if (konamiCode.join(',') === konamiSequence.join(',')) {
-                document.body.style.animation = 'rainbow 2s infinite';
-                setTimeout(() => {
-                    document.body.style.animation = '';
-                }, 5000);
-            }
-        });
-
         // Modal functions
         function openStaffModal() {
             document.getElementById('staffModal').classList.add('show');
@@ -2103,12 +1941,25 @@
             document.body.style.overflow = '';
         }
 
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.add('show');
+            document.getElementById('termsModalOverlay').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.remove('show');
+            document.getElementById('termsModalOverlay').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
         // Close modals on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeStaffModal();
                 closePartnersModal();
                 closeRulesModal();
+                closeTermsModal();
             }
         });
     </script>
