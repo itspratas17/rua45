@@ -709,8 +709,8 @@
            ======================================== */
         .back-to-top {
             position: fixed;
-            bottom: 32px;
-            right: 32px;
+            bottom: 90px;
+            right: 20px;
             width: 52px;
             height: 52px;
             background: var(--accent-gradient);
@@ -737,6 +737,67 @@
         .back-to-top:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
+        }
+
+        /* ========================================
+           SUPPORT BUTTON
+           ======================================== */
+        .support-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #5865f2;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95em;
+            box-shadow: 0 4px 16px rgba(88, 101, 242, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .support-button:hover {
+            background: #4752c4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(88, 101, 242, 0.6);
+        }
+
+        .support-button i {
+            font-size: 1.2em;
+        }
+
+        .support-text {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 768px) {
+            .support-button {
+                bottom: 16px;
+                right: 16px;
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+
+            .support-text {
+                display: none;
+            }
+
+            .support-button i {
+                font-size: 1.4em;
+            }
+
+            .back-to-top {
+                bottom: 90px;
+                right: 16px;
+            }
         }
 
         /* ========================================
@@ -1449,6 +1510,10 @@
             </div>
         </div>
     </footer>
+    <a href="https://discord.com/channels/1443353708829085839/1455366577368072212" target="_blank" rel="noopener noreferrer" class="support-button" aria-label="Suporte Discord">
+        <i class="fab fa-discord"></i>
+        <span class="support-text">Suporte</span>
+    </a>
 
     <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
